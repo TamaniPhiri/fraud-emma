@@ -21,7 +21,7 @@ const Login = () => {
       });
       if (response.status === 200) {
         console.log(response.data);
-        Cookies.set("user",response.data)
+        Cookies.set("user",JSON.stringify(response.data),{sameSite:"None"})
         window.location.href = "/home";
       }
     } catch (error) {

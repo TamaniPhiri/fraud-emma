@@ -70,7 +70,9 @@ const FraudBarChart = () => {
   };
 
   return (
-    <Bar style={{width:"100%"}} data={chartData} options={chartOptions} />
+    <div className="w-full flex items-center justify-center">
+      <Bar style={{width:"100%"}} data={chartData} options={chartOptions} />
+    </div>
   );
 };
 

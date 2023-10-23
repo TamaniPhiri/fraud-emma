@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="w-fit h-screen px-2 flex bg-blue-800">
+    <div className="w-fit min-h-screen px-2 flex bg-blue-800">
       <div className="w-full flex flex-col justify-between py-6">
         <div className="w-full flex flex-col gap-6">
           <a className="text-blue-900 text-2xl font-extrabold bg-white rounded px-2 py-2 flex items-center gap-3"><p>Fraud</p><ion-icon name="albums-outline"></ion-icon></a>
