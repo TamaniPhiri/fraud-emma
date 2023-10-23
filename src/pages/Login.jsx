@@ -5,10 +5,12 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setloading] = useState(false);
+  const[error,setError]=useState("");
   const userLogin = async (e) => {
     if (username === "" || password === "") {
       return alert("Please fill in the missing fields");
     }
+    setError("")
     try {
       setloading(true);
       e.preventDefault();
@@ -17,10 +19,11 @@ const Login = () => {
         password,
       });
       if (response.status === 200) {
-        window.location.href = "/";
+        window.location.href = "/home";
       }
     } catch (error) {
       console.log(error);
+      setError("Authentication failed")
     } finally {
       setloading(false);
     }
@@ -63,9 +66,12 @@ const Login = () => {
               Login
             </button>
           )}
+          <span>{error}</span>
         </div>
       </div>
-      <div className="lg:flex hidden">2</div>
+      <div className="lg:flex hidden w-full">
+        <img src="/src/assets/bgemma.jpg" alt="bg Image" loading="lazy" className=" object-cover w-full h-screen"/>
+      </div>
     </div>
   );
 };

@@ -7,10 +7,10 @@ import Login from "./pages/Login";
 const App = () => {
   return (
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/history" element={<History />} />
           <Route path="/transactions" element={<Transactions />} />
-          <Route path="/login" Component={Login}/>
+          <Route path="/" Component={Login}/>
         </Routes>
   );
 };
