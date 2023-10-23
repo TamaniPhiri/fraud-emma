@@ -14,7 +14,7 @@ const Navbar = () => {
             <Link to="/transactions" className="py-2 px-2 hover:bg-slate-100 hover:text-blue-900 rounded cursor-pointer flex gap-3 items-center"><ion-icon name="wallet-outline"></ion-icon><p>Report</p></Link>
           </li>
         </div>
-        <Link to={'/login'} className="py-2 px-2 text-white rounded cursor-pointer flex gap-3 items-center"><ion-icon size="large" name="log-in-outline"></ion-icon><p className="text-lg">Login</p></Link>
+        <Link to={'/'} className="py-2 px-2 text-white rounded cursor-pointer flex gap-3 items-center"><ion-icon size="large" name="log-in-outline"></ion-icon><p className="text-lg">Logout</p></Link>
       </div>
     </div>
   );

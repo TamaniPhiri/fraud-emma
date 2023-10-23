@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 import { useState } from "react";
 
 const Login = () => {
@@ -19,6 +20,8 @@ const Login = () => {
         password,
       });
       if (response.status === 200) {
+        console.log(response.data);
+        Cookies.set("user",response.data)
         window.location.href = "/home";
       }
     } catch (error) {
