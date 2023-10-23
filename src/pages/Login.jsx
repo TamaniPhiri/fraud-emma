@@ -7,7 +7,7 @@ const Login = () => {
   const [loading, setloading] = useState(false);
   const userLogin = async (e) => {
     if (username === "" || password === "") {
-      alert("Please fill in the missing fields");
+        return alert("Please fill in the missing fields");
     }
     try {
       setloading(true);
