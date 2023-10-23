@@ -7,7 +7,7 @@ const Login = () => {
   const [loading, setloading] = useState(false);
   const userLogin = async (e) => {
     if (username === "" || password === "") {
-        return alert("Please fill in the missing fields");
+      return alert("Please fill in the missing fields");
     }
     try {
       setloading(true);
@@ -53,7 +53,7 @@ const Login = () => {
               onClick={userLogin}
               className=" w-full bg-blue-900 border font-semibold flex items-center justify-center border-gray-500 active:scale-95 duration-200 p-2 rounded-md mt-4"
             >
-                <div className="w-7 h-7 border-2 border-t-blue-900 animate-spin rounded-full"></div>
+              <div className="w-7 h-7 border-2 border-t-blue-900 animate-spin rounded-full"></div>
             </button>
           ) : (
             <button
