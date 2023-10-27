@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 import BarChart from "./BarChart";
 import Sidebar from "./Sidebar";
+import FraudChart from "./FraudChart";
 
 const Home = () => {
   const user = JSON.parse(Cookies.get("user"));
@@ -18,7 +19,7 @@ const Home = () => {
             <span className="text-gray-600">{user.email}</span>
           </div>
         </div>
-        <div className=" text-center w-full my-6 gap-4 flex items-center justify-center flex-col">
+        <div className=" text-center w-full my-12 gap-4 flex items-center justify-center flex-col">
           <h1 className=" text-5xl font-bold">Fraud detection system</h1>
           <p className=" lg:max-w-2xl md:max-w-lg w-full">
             Welcome to the future of safeguarding your financial world with our
@@ -34,7 +35,7 @@ const Home = () => {
           </p>
         </div>
         <BarChart />
-        <div>fl</div>
+        <FraudChart/>
       </div>
     </div>
   );
