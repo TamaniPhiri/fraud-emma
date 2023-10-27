@@ -34,8 +34,8 @@ const Home = () => {
             us today in the fight against financial fraud!
           </p>
         </div>
-        <BarChart />
         <FraudChart/>
+        <BarChart />
       </div>
     </div>
   );

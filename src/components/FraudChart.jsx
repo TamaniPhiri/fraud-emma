@@ -30,13 +30,13 @@ const FraudChart = () => {
   };
 
   return (
-    <div className=' w-full grid grid-cols-2'>
+    <div className=' w-full grid grid-cols-2 items-center justify-center min-h-screen py-24 px-4'>
       <div>
         <h2>Rate of Fraud in previous transactions</h2>
         <Pie data={pieChartData} />
       </div>
 
-      <div>
+      <div className=' h-full'>
         <h2>Bar Chart: Fraud Cases Over Time</h2>
         <Bar data={barChartData} />
       </div>
