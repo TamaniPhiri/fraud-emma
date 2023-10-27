@@ -30,9 +30,9 @@ const FraudChart = () => {
   };
 
   return (
-    <div>
+    <div className=' w-full grid grid-cols-2'>
       <div>
-        <h2>Pie Chart: Rate of Fraud</h2>
+        <h2>Rate of Fraud in previous transactions</h2>
         <Pie data={pieChartData} />
       </div>
 
