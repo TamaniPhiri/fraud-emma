@@ -18,6 +18,9 @@ const Home = () => {
             <span className="text-gray-600">{user.email}</span>
           </div>
         </div>
+        <div className=" text-center w-full my-6">
+          <h1 className=" text-5xl font-bold">Fraud detection system</h1>
+        </div>
         <BarChart />
         <div>fl</div>
       </div>
