@@ -1,6 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -15,11 +16,11 @@ const Login = () => {
     try {
       setloading(true);
       e.preventDefault();
-      const response = await axios.post("https://dummyjson.com/auth/login", {
+      const response = await axios.post("http://localhost:9000/user/login", {
         username,
         password,
       });
-      if (response.status === 200) {
+      if (response.status === 201) {
         console.log(response.data);
         Cookies.set("user",JSON.stringify(response.data),{sameSite:"None"})
         window.location.href = "/home";
@@ -64,12 +65,13 @@ const Login = () => {
           ) : (
             <button
               onClick={userLogin}
-              className=" w-full bg-blue-900 border font-semibold border-gray-500 active:scale-95 duration-200 p-2 rounded-md mt-4"
+              className=" w-full bg-blue-950 hover:bg-black border font-semibold border-gray-500 active:scale-95 duration-200 p-2 rounded-md mt-4"
             >
               Login
             </button>
           )}
           <span>{error}</span>
+          <Link to={'/register'} className=" text-center">Don&#39;t have an account? Register </Link>
         </div>
       </div>
       <div className="lg:flex hidden w-full">

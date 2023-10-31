@@ -1,6 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -24,14 +25,14 @@ const Register = () => {
     try {
       setloading(true);
       e.preventDefault();
-      const response = await axios.post("https://dummyjson.com/auth/login", {
+      const response = await axios.post("http://localhost:9000/user/register", {
         username: userName,
-        password: password,
-        full_name: fullName,
-        email: email,
         phone_number: phoneNumber,
+        password: password,
+        email: email,
+        full_name: fullName, 
       });
-      if (response.status === 200) {
+      if (response.status === 201) {
         console.log(response.data);
         Cookies.set("user", JSON.stringify(response.data), {
           sameSite: "None",
@@ -47,6 +48,14 @@ const Register = () => {
   };
   return (
     <div className=" w-full grid lg:grid-cols-2 grid-cols-1 items-center justify-center min-h-screen">
+        <div className="lg:flex hidden w-full">
+        <img
+          src="/src/assets/bgemma.jpg"
+          alt="bg Image"
+          loading="lazy"
+          className=" object-cover w-full h-screen"
+        />
+      </div>
       <div className="bg-blue-800 text-white h-full w-full flex items-center justify-center">
         <div className="grid gap-2 w-full max-w-full md:max-w-xs px-4">
           <span className=" font-bold">Username</span>
@@ -74,7 +83,7 @@ const Register = () => {
             id=""
             className=" text-black focus:outline-none p-2 rounded-md w-full"
           />
-          <span className=" font-bold">Phone Number</span>
+          <span className=" font-bold">Email</span>
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="text"
@@ -105,19 +114,12 @@ const Register = () => {
               onClick={userLogin}
               className=" w-full bg-blue-900 border font-semibold border-gray-500 active:scale-95 duration-200 p-2 rounded-md mt-4"
             >
-              Login
+              Register
             </button>
           )}
           <span>{error}</span>
+          <Link to={'/'} className=" text-center">Already have an account? Login </Link>
         </div>
-      </div>
-      <div className="lg:flex hidden w-full">
-        <img
-          src="/src/assets/bgemma.jpg"
-          alt="bg Image"
-          loading="lazy"
-          className=" object-cover w-full h-screen"
-        />
       </div>
     </div>
   );

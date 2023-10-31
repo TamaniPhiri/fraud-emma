@@ -5,7 +5,8 @@ import FraudChart from "./FraudChart";
 
 const Home = () => {
   const user = JSON.parse(Cookies.get("user"));
-  console.log(user.username);
+  console.log(user.user.username);
+  console.log(user.user._id);
   return (
     <div className="w-full min-h-screen justify-center flex">
       <Sidebar />
@@ -15,8 +16,10 @@ const Home = () => {
             <img src={user.image} alt="user" className=" rounded-full" />
           </div>
           <div className="grid">
-            <span className="capitalize font-semibold">{user.username}</span>
-            <span className="text-gray-600">{user.email}</span>
+            <span className="capitalize font-semibold">
+              {user.user.username}
+            </span>
+            <span className="text-gray-600">{user.user.email}</span>
           </div>
         </div>
         <div className=" text-center w-full my-12 gap-4 flex items-center justify-center flex-col">
@@ -34,7 +37,7 @@ const Home = () => {
             us today in the fight against financial fraud!
           </p>
         </div>
-        <FraudChart/>
+        <FraudChart />
         <BarChart />
       </div>
     </div>
